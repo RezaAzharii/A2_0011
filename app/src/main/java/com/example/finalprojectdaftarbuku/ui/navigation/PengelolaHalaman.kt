@@ -175,7 +175,24 @@ fun PengelolaHalaman(
                 )
             }
         }
-
+        composable(
+            DestinasiUpdateKategori.routesWithArg,
+            arguments = listOf(
+                navArgument(DestinasiDaftarKategori.IDK){
+                    type = NavType.IntType
+                }
+            )
+        ){
+            val idk = it.arguments?.getInt(DestinasiUpdateKategori.IDK)
+            idk?.let {
+                EditKategoriView(
+                    NavigateBack = { navController.popBackStack() },
+                    onNavigate ={
+                        navController.navigate(DestinasiDaftarKategori.route)
+                    }
+                )
+            }
+        }
 
 
     }
