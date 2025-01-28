@@ -293,6 +293,32 @@ fun PengelolaHalaman(
                 }
             )
         }
+        composable(
+            DestinasiDetailPenulis.routesWithArg,
+            arguments = listOf(
+                navArgument(DestinasiDetailPenulis.IDPS){
+                    type = NavType.IntType
+                }
+            )
+        ){
+            val idps = it.arguments?.getInt(DestinasiUpdatePenulis.IDPS)
+            idps?.let {
+                DetailPnsScreen(
+                    navigateToItemUpdate = {
+                        navController.navigate("${DestinasiUpdatePenulis.route}/$idps")
+                    },
+                    navigateBack = {
+                        navController.navigate(DestinasiDaftarPenulis.route) {
+                            popUpTo(DestinasiDaftarPenulis.route) {
+                                inclusive = true
+                            }
+                        }
+                    }
+                )
+            }
+        }
+
+
 
     }
 }
