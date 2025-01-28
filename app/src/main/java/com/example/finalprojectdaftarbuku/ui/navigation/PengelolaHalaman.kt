@@ -194,6 +194,22 @@ fun PengelolaHalaman(
             }
         }
 
+        //Penerbit
+        composable(DestinasiDaftarPenerbit.route){
+            DaftarPenerbit(
+                NavigateToEntryPenerbit = {navController.navigate(DestinasiTambahPenerbit.route)},
+                onEditClick = {idPernebit ->
+                    navController.navigate("${DestinasiUpdatePenerbit.route}/$idPernebit")
+                },
+                onDetailClick = {idPenerbit ->
+                    navController.navigate("${DestinasiDetailPenerbit.route}/$idPenerbit")
+                },
+                navigateToDftrHome = {navController.navigate(DestinasiHome.route)},
+                navigateToDftrKategori = {navController.navigate(DestinasiDaftarKategori.route)},
+                navigateToDftrPenulis = {navController.navigate(DestinasiDaftarPenulis.route)},
+                navigateToDftrStatus = {navController.navigate(DestinasiStatus.route)}
+            )
+        }
 
     }
 }
