@@ -59,6 +59,7 @@ object PenyediaViewModel{
 
         //Kategori
         initializer { DaftarKategoriViewModel(aplikasiBuku().container.kategoriRepository) }
+        initializer { TambahKategoriViewModel(aplikasiBuku().container.kategoriRepository) }
 
     }
 }
