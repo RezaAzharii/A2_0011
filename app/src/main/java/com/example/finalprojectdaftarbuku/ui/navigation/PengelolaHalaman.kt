@@ -317,8 +317,25 @@ fun PengelolaHalaman(
                 )
             }
         }
-
-
-
+        composable(
+            DestinasiUpdatePenulis.routesWithArg,
+            arguments = listOf(
+                navArgument(DestinasiUpdatePenulis.IDPS){
+                    type = NavType.IntType
+                }
+            )
+        ){
+            val idpns = it.arguments?.getInt(DestinasiUpdatePenulis.IDPS)
+            idpns?.let {
+                EditPenulisView(
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                    onNavigate = {
+                        navController.navigate(DestinasiDaftarPenulis.route)
+                    }
+                )
+            }
+        }
     }
 }
