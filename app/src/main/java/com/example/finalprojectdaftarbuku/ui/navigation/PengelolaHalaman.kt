@@ -140,7 +140,17 @@ fun PengelolaHalaman(
                 navigateToHome = {navController.navigate(DestinasiHome.route)}
             )
         }
-
+        composable(DestinasiTambahKategori.route){
+            TambahKategoriScreen(
+                NavigateBack = {
+                    navController.navigate(DestinasiDaftarKategori.route){
+                        popUpTo(DestinasiDaftarKategori.route){
+                            inclusive = true
+                        }
+                    }
+                }
+            )
+        }
 
     }
 }
