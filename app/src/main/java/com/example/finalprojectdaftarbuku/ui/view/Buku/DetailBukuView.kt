@@ -178,7 +178,7 @@ fun ItemDetailBuku(
                     Icon(
                         painter = painterResource(R.drawable.baseline_remove_red_eye_24),
                         contentDescription = "Lihat Kategori",
-                        tint = MaterialTheme.colorScheme.primary // Warna ikon
+                        tint = MaterialTheme.colorScheme.primary
                     )
                 }
             }

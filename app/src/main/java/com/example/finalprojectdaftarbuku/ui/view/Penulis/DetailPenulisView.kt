@@ -29,12 +29,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.finalprojectdaftarbuku.R
 import com.example.finalprojectdaftarbuku.model.Penulis
 import com.example.finalprojectdaftarbuku.ui.customwidget.TopBarApp
-import com.example.finalprojectdaftarbuku.ui.view.Kategori.ComponentDetailKtg
 import com.example.finalprojectdaftarbuku.ui.viewmodel.PenulsiVM.DetailPenulisViewModel
 import com.example.finalprojectdaftarbuku.ui.viewmodel.PenulsiVM.DetailPnsUiState
 import com.example.finalprojectdaftarbuku.ui.viewmodel.PenyediaViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailPnsScreen(
     navigateBack: () -> Unit,
