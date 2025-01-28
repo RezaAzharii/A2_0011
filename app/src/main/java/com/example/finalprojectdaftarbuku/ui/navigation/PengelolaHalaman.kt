@@ -51,6 +51,20 @@ fun PengelolaHalaman(
                 }
             )
         }
+        composable(DestinasiStatus.route){
+            StatusScreen(
+                navigateToHome = {navController.navigate(DestinasiHome.route)},
+                navigateToDftrKategori = {navController.navigate(DestinasiDaftarKategori.route)},
+                navigateToDftrPenerbit = {navController.navigate(DestinasiDaftarPenerbit.route)},
+                navigateToDftrPenulis = {navController.navigate(DestinasiDaftarPenulis.route)},
+                navigateDetailBku = {idBuku->
+                    navController.navigate("${DestinasiDetailBuku.route}/$idBuku")
+                },
+                navigateEditBku = {idBku ->
+                    navController.navigate("${DestinasiUpdateBuku.route}/$idBku")
+                }
+            )
+        }
         composable(DestinsaiInsertBuku.route) {
             EntryBukuScreen(
                 NavigateBack = {
