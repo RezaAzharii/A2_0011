@@ -89,6 +89,7 @@ object PenyediaViewModel{
         }
 
         //Penulis
+        initializer { DaftarPenulisViewModel(aplikasiBuku().container.penulisRepository) }
         initializer { TambahPenulisViewModel(aplikasiBuku().container.penulisRepository) }
     }
 }
