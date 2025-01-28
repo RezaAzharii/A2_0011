@@ -34,22 +34,34 @@ fun PengelolaHalaman(
         navController = navController,
         startDestination = DestinasiHome.route,
         modifier = Modifier
-    ){
+    ) {
         //Buku
-        composable(DestinasiHome.route){
+        composable(DestinasiHome.route) {
             HomeScreen(
-                navigateToItemEntry ={navController.navigate(DestinsaiInsertBuku.route)},
-                navigateToDftrStatus = {navController.navigate(DestinasiStatus.route)},
-                navigateToDftrKategori = {navController.navigate(DestinasiDaftarKategori.route)},
-                navigateToDftrPenerbit = {navController.navigate(DestinasiDaftarPenerbit.route)},
-                navigateToDftrPenulis = {navController.navigate(DestinasiDaftarPenulis.route)},
-                navigateDetailBku = {idBuku->
+                navigateToItemEntry = { navController.navigate(DestinsaiInsertBuku.route) },
+                navigateToDftrStatus = { navController.navigate(DestinasiStatus.route) },
+                navigateToDftrKategori = { navController.navigate(DestinasiDaftarKategori.route) },
+                navigateToDftrPenerbit = { navController.navigate(DestinasiDaftarPenerbit.route) },
+                navigateToDftrPenulis = { navController.navigate(DestinasiDaftarPenulis.route) },
+                navigateDetailBku = { idBuku ->
                     navController.navigate("${DestinasiDetailBuku.route}/$idBuku")
                 },
-                navigateEditBku = {idBku ->
+                navigateEditBku = { idBku ->
                     navController.navigate("${DestinasiUpdateBuku.route}/$idBku")
                 }
             )
         }
+        composable(DestinsaiInsertBuku.route) {
+            EntryBukuScreen(
+                NavigateBack = {
+                    navController.navigate(DestinasiHome.route) {
+                        popUpTo(DestinasiHome.route) {
+                            inclusive = true
+                        }
+                    }
+                }
+            )
+        }
 
+    }
 }
