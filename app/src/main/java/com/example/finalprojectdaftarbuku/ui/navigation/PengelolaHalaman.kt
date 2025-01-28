@@ -210,6 +210,17 @@ fun PengelolaHalaman(
                 navigateToDftrStatus = {navController.navigate(DestinasiStatus.route)}
             )
         }
+        composable(DestinasiTambahPenerbit.route){
+            TambahPenerbitScreen(
+                NavigateBack = {
+                    navController.navigate(DestinasiDaftarPenerbit.route){
+                        popUpTo(DestinasiDaftarPenerbit.route){
+                            inclusive = true
+                        }
+                    }
+                }
+            )
+        }
 
     }
 }
