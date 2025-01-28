@@ -76,6 +76,12 @@ object PenyediaViewModel{
         initializer { DaftarPenerbitViewModel(aplikasiBuku().container.penerbitRepository) }
         initializer { TambahPenerbitViewModel(aplikasiBuku().container.penerbitRepository) }
         initializer {
+            DetailPenerbitViewModel(
+                createSavedStateHandle(),
+                aplikasiBuku().container.penerbitRepository
+            )
+        }
+        initializer {
             EditPenerbitViewModel(
                 createSavedStateHandle(),
                 aplikasiBuku().container.penerbitRepository
