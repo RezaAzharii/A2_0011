@@ -97,6 +97,12 @@ object PenyediaViewModel{
                 aplikasiBuku().container.penulisRepository
             )
         }
+        initializer {
+            EditPenulisViewModel(
+                createSavedStateHandle(),
+                aplikasiBuku().container.penulisRepository
+            )
+        }
     }
 }
 
