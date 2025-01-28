@@ -124,5 +124,23 @@ fun PengelolaHalaman(
             }
         }
 
+        //Kategori
+        composable(DestinasiDaftarKategori.route){
+            DaftarKategori(
+                navigateToDftrStatus = {navController.navigate(DestinasiStatus.route)},
+                navigateToDftrPenerbit = {navController.navigate(DestinasiDaftarPenerbit.route)},
+                navigateToDftrPenulis = {navController.navigate(DestinasiDaftarPenulis.route)},
+                NavigateToEntryKategori = {navController.navigate(DestinasiTambahKategori.route)},
+                NavigateEditClick =  {idKategori ->
+                    navController.navigate("${DestinasiUpdateKategori.route}/$idKategori")
+                },
+                onDetailClick = {idKategori ->
+                    navController.navigate("${DestinasiDetailKategori.route}/$idKategori")
+                },
+                navigateToHome = {navController.navigate(DestinasiHome.route)}
+            )
+        }
+
+
     }
 }
