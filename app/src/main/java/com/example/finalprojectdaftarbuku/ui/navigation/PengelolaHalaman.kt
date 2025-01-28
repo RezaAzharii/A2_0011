@@ -245,7 +245,6 @@ fun PengelolaHalaman(
                 )
             }
         }
-
         composable(
             DestinasiUpdatePenerbit.routesWithArg,
             arguments = listOf(
@@ -266,5 +265,19 @@ fun PengelolaHalaman(
                 )
             }
         }
+
+        //Penulis
+        composable(DestinasiTambahPenulis.route){
+            TambahPenulisScreen(
+                NavigateBack = {
+                    navController.navigate(DestinasiDaftarPenulis.route){
+                        popUpTo(DestinasiDaftarPenulis.route){
+                            inclusive = true
+                        }
+                    }
+                }
+            )
+        }
+
     }
 }
