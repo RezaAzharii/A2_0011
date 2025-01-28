@@ -221,6 +221,25 @@ fun PengelolaHalaman(
                 }
             )
         }
-
+        composable(
+            DestinasiUpdatePenerbit.routesWithArg,
+            arguments = listOf(
+                navArgument(DestinasiUpdatePenerbit.IDPN){
+                    type = NavType.IntType
+                }
+            )
+        ){
+            val idpn = it.arguments?.getInt(DestinasiUpdatePenerbit.IDPN)
+            idpn?.let {
+                EditPenerbitView(
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                    onNavigate = {
+                        navController.navigate(DestinasiDaftarPenerbit.route)
+                    }
+                )
+            }
+        }
     }
 }
