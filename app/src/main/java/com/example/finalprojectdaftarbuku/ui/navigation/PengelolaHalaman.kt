@@ -62,6 +62,34 @@ fun PengelolaHalaman(
                 }
             )
         }
+        composable(
+            DestinasiDetailBuku.routesWithArg,
+            arguments = listOf(
+                navArgument(DestinasiDetailBuku.IDB){
+                    type = NavType.IntType
+                }
+            )
+        ){
+            val idb = it.arguments?.getInt(DestinasiUpdateBuku.IDB)
+            idb?.let {
+                DetailBukuScreen(
+                    navigateToItemUpdate = {
+                        navController.navigate("${DestinasiUpdateBuku.route}/$idb")
+                    },
+                    navigateBack = {
+                        navController.navigate(DestinasiHome.route){
+                            popUpTo(DestinasiHome.route){
+                                inclusive = true
+                            }
+                        }
+                    },
+                    navigateToKategori = {
+                        navController.navigate(DestinasiDaftarKategori.route)
+                    }
+                )
+            }
+        }
+
 
     }
 }
