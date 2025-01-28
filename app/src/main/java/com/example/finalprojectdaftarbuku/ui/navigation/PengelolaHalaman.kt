@@ -89,7 +89,26 @@ fun PengelolaHalaman(
                 )
             }
         }
-
+        composable(
+            DestinasiUpdateBuku.routesWithArg,
+            arguments = listOf(
+                navArgument(DestinasiUpdateBuku.IDB){
+                    type = NavType.IntType
+                }
+            )
+        ){
+            val idb = it.arguments?.getInt(DestinasiUpdateBuku.IDB)
+            idb?.let {
+                EditBukuView(
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                    onNavigate ={
+                        navController.navigate(DestinasiHome.route)
+                    }
+                )
+            }
+        }
 
     }
 }
