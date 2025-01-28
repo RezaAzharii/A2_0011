@@ -267,6 +267,21 @@ fun PengelolaHalaman(
         }
 
         //Penulis
+        composable(DestinasiDaftarPenulis.route){
+            DaftarPenulis(
+                navigateToDftrHome = {navController.navigate(DestinasiHome.route)},
+                navigateToDftrStatus = {navController.navigate(DestinasiStatus.route)},
+                navigateToDftrKategori = {navController.navigate(DestinasiDaftarKategori.route)},
+                navigateToDftrPenerbit = {navController.navigate(DestinasiDaftarPenerbit.route)},
+                NavigateToEntryPenulis = {navController.navigate(DestinasiTambahPenulis.route)},
+                onEditClick = {idPenulis ->
+                    navController.navigate("${DestinasiUpdatePenulis.route}/$idPenulis")
+                },
+                onDetailClick = {idPenulis ->
+                    navController.navigate("${DestinasiDetailPenulis.route}/$idPenulis")
+                },
+            )
+        }
         composable(DestinasiTambahPenulis.route){
             TambahPenulisScreen(
                 NavigateBack = {
