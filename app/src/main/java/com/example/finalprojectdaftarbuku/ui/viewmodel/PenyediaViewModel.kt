@@ -87,6 +87,9 @@ object PenyediaViewModel{
                 aplikasiBuku().container.penerbitRepository
             )
         }
+
+        //Penulis
+        initializer { TambahPenulisViewModel(aplikasiBuku().container.penulisRepository) }
     }
 }
 
