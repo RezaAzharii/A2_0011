@@ -91,6 +91,12 @@ object PenyediaViewModel{
         //Penulis
         initializer { DaftarPenulisViewModel(aplikasiBuku().container.penulisRepository) }
         initializer { TambahPenulisViewModel(aplikasiBuku().container.penulisRepository) }
+        initializer {
+            DetailPenulisViewModel(
+                createSavedStateHandle(),
+                aplikasiBuku().container.penulisRepository
+            )
+        }
     }
 }
 
