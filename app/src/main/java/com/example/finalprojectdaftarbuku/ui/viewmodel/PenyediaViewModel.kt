@@ -29,7 +29,14 @@ object PenyediaViewModel{
     val Factory = viewModelFactory {
         //Buku
         initializer { HomeViewModel(aplikasiBuku().container.bukuRepository) }
-
+        initializer {
+            TambahBukuViewModel(
+                aplikasiBuku().container.bukuRepository,
+                aplikasiBuku().container.kategoriRepository,
+                aplikasiBuku().container.penerbitRepository,
+                aplikasiBuku().container.penulisRepository
+            )
+        }
     }
 }
 
