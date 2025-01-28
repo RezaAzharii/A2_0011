@@ -60,6 +60,10 @@ object PenyediaViewModel{
         //Kategori
         initializer { DaftarKategoriViewModel(aplikasiBuku().container.kategoriRepository) }
         initializer { TambahKategoriViewModel(aplikasiBuku().container.kategoriRepository) }
+        initializer { DetailKategoriViewModel(
+            createSavedStateHandle()
+            ,aplikasiBuku().container.kategoriRepository
+        ) }
 
     }
 }
