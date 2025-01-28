@@ -71,6 +71,9 @@ object PenyediaViewModel{
                 aplikasiBuku().container.kategoriRepository
             )
         }
+
+        //Penerbit
+        initializer { DaftarPenerbitViewModel(aplikasiBuku().container.penerbitRepository) }
     }
 }
 
