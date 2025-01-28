@@ -63,8 +63,14 @@ object PenyediaViewModel{
         initializer { DetailKategoriViewModel(
             createSavedStateHandle()
             ,aplikasiBuku().container.kategoriRepository
-        ) }
-
+            )
+        }
+        initializer {
+            EditKategoriViewModel(
+                createSavedStateHandle(),
+                aplikasiBuku().container.kategoriRepository
+            )
+        }
     }
 }
 
