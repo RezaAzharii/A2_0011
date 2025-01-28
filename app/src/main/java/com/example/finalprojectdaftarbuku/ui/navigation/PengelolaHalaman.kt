@@ -151,6 +151,32 @@ fun PengelolaHalaman(
                 }
             )
         }
+        composable(
+            DestinasiDetailKategori.routesWithArg,
+            arguments = listOf(
+                navArgument(DestinasiDetailKategori.IDK){
+                    type = NavType.IntType
+                }
+            )
+        ){
+            val idk = it.arguments?.getInt(DestinasiUpdateKategori.IDK)
+            idk?.let {
+                DetailKtgScreen(
+                    navigateToItemUpdate = {
+                        navController.navigate("${DestinasiUpdateKategori.route}/$idk")
+                    },
+                    navigateBack = {
+                        navController.navigate(DestinasiDaftarKategori.route) {
+                            popUpTo(DestinasiDaftarKategori.route) {
+                                inclusive = true
+                            }
+                        }
+                    }
+                )
+            }
+        }
+
+
 
     }
 }
