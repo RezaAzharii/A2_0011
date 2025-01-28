@@ -46,6 +46,15 @@ object PenyediaViewModel{
                 aplikasiBuku().container.penulisRepository
             )
         }
+        initializer {
+            EditBukuViewModel(
+                createSavedStateHandle(),
+                aplikasiBuku().container.bukuRepository,
+                aplikasiBuku().container.kategoriRepository,
+                aplikasiBuku().container.penerbitRepository,
+                aplikasiBuku().container.penulisRepository
+            )
+        }
     }
 }
 
