@@ -76,3 +76,9 @@ HasilTambahBuku
 21.  HapusPenulis
     ![HapusPenulis](https://github.com/user-attachments/assets/908620b1-d614-41fb-a096-4e00fdd89659)
     ![HasilHapusPenulis](https://github.com/user-attachments/assets/9691e10b-f75d-4260-8857-bb965889f58a)
+
+22. Screenn Status
+    Dipesan
+   ![daftarBukudenganstatusdipesan](https://github.com/user-attachments/assets/15ec14d3-527f-43cd-af12-f429b4996f4b)
+    Habis
+    ![DaftarBukuyanghabis](https://github.com/user-attachments/assets/2847960e-0ebf-4d92-bb23-8c192944cc31)
